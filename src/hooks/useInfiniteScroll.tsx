@@ -26,10 +26,6 @@ const useInfiniteScroll = (filters: IFormFilter) => {
         hasMore.current = data.info.next !== null;
       } catch (error) {
         hasMore.current = false;
-        // If user searches invalid name reset characters
-        if(filters.page === 1) {
-          setCharacters([]);
-        }
       } finally {
         setIsLoading(false);
       }
